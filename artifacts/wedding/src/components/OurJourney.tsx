@@ -3,30 +3,44 @@ import { motion } from 'framer-motion';
 const milestones = [
   {
     label: 'Where It Began',
-    title: 'From Strangers to Smiles',
+    title: 'Destiny Had Other Plans',
     description:
-      'In the quiet corridors of college, a senior and a junior crossed paths — two strangers unaware that fate had already begun its gentle work.',
+      'Among countless profiles and possibilities, our paths crossed through matrimony. What seemed like a simple introduction soon unfolded into the beginning of our forever.',
     side: 'left',
   },
   {
-    label: 'Growing Closer',
-    title: 'Friendship Found Its Way',
+    label: '29 · September · 2025',
+    title: 'Our First Hello',
     description:
-      'Conversations turned comfortable, laughter came easily — and friendship quietly bloomed between a girl with dreams and a boy with purpose.',
+      'At Qatar Airport, we met for the very first time. A moment that seemed ordinary became unforgettable — the day two strangers looked into each other\'s eyes and wondered what the future might hold.',
     side: 'right',
   },
   {
-    label: 'When Hearts Spoke',
-    title: 'Love Took Root',
+    label: '03 · October · 2025',
+    title: 'Families Became One',
     description:
-      'Somewhere between shared dreams and unspoken promises, friendship transformed into love — steady, certain, and deeply true.',
+      'Our Pennukanal brought our families together. With warm smiles, heartfelt conversations, and blessings all around, what started as a meeting began to feel like destiny unfolding.',
     side: 'left',
   },
   {
-    label: 'A New Chapter',
+    label: '30 · January · 2026',
+    title: 'Miles Couldn\'t Keep Us Apart',
+    description:
+      'We met again in Dubai, and this time everything felt more familiar. Every conversation, every laugh, and every shared moment made us realize that home wasn\'t a place — it was finding each other.',
+    side: 'right',
+  },
+  {
+    label: 'Growing Together',
+    title: 'Love Found Its Place',
+    description:
+      'Between distance and togetherness, conversations and quiet moments, trust blossomed into love. What began as a matrimonial match became a bond built on understanding, respect, and unwavering companionship.',
+    side: 'left',
+  },
+  {
+    label: '31 · August · 2026',
     title: 'Forever Begins',
     description:
-      'With families united and hearts full of joy, Kavya and Vineeth step into forever — hand in hand, ready for every sunrise together.',
+      'With the blessings of our families and the love we\'ve nurtured together, we begin our greatest adventure — not as two individuals, but as one heart, one home, and one beautiful forever.',
     side: 'right',
   },
 ];
@@ -36,7 +50,7 @@ function TimelineDot({ index }: { index: number }) {
     <motion.div
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      transition={{ delay: 0.3 + index * 0.3, duration: 0.5, ease: 'easeOut' }}
+      transition={{ delay: 0.4 + index * 0.2, duration: 0.5, ease: 'easeOut' }}
       className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-primary bg-background z-10 shadow-[0_0_12px_2px_hsl(44_56%_54%/0.4)]"
     />
   );
@@ -52,39 +66,39 @@ function MilestoneEntry({
   const isLeft = milestone.side === 'left';
 
   return (
-    <div className="relative grid grid-cols-[1fr_auto_1fr] gap-0 min-h-[180px] mb-2">
-      {/* Left content */}
+    <div className="relative grid grid-cols-[1fr_16px_1fr] items-center min-h-[160px] mb-4">
+      {/* Left column */}
       <motion.div
-        initial={{ opacity: 0, x: -40 }}
+        initial={{ opacity: 0, x: -36 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.2 + index * 0.3, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        className={`pr-10 py-6 flex flex-col justify-center ${isLeft ? 'text-right' : ''}`}
+        transition={{ delay: 0.3 + index * 0.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        className="pr-10 py-6 flex flex-col justify-center text-right"
       >
         {isLeft && (
           <>
             <p className="font-sans text-[10px] tracking-[0.22em] uppercase text-primary/60 mb-2">
               {milestone.label}
             </p>
-            <h3 className="font-serif text-xl md:text-2xl text-foreground/90 italic mb-3">
+            <h3 className="font-serif text-xl md:text-2xl text-foreground/90 italic mb-3 leading-snug">
               {milestone.title}
             </h3>
-            <p className="font-serif text-sm md:text-base text-foreground/50 leading-relaxed italic">
+            <p className="font-serif text-sm md:text-[15px] text-foreground/50 leading-relaxed italic">
               {milestone.description}
             </p>
           </>
         )}
       </motion.div>
 
-      {/* Center timeline */}
-      <div className="relative flex items-center justify-center w-4">
+      {/* Centre dot */}
+      <div className="relative flex items-center justify-center h-full">
         <TimelineDot index={index} />
       </div>
 
-      {/* Right content */}
+      {/* Right column */}
       <motion.div
-        initial={{ opacity: 0, x: 40 }}
+        initial={{ opacity: 0, x: 36 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.2 + index * 0.3, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ delay: 0.3 + index * 0.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         className="pl-10 py-6 flex flex-col justify-center"
       >
         {!isLeft && (
@@ -92,10 +106,10 @@ function MilestoneEntry({
             <p className="font-sans text-[10px] tracking-[0.22em] uppercase text-primary/60 mb-2">
               {milestone.label}
             </p>
-            <h3 className="font-serif text-xl md:text-2xl text-foreground/90 italic mb-3">
+            <h3 className="font-serif text-xl md:text-2xl text-foreground/90 italic mb-3 leading-snug">
               {milestone.title}
             </h3>
-            <p className="font-serif text-sm md:text-base text-foreground/50 leading-relaxed italic">
+            <p className="font-serif text-sm md:text-[15px] text-foreground/50 leading-relaxed italic">
               {milestone.description}
             </p>
           </>
@@ -117,7 +131,7 @@ export function OurJourney() {
         }}
       />
 
-      {/* Section heading */}
+      {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -130,7 +144,7 @@ export function OurJourney() {
         <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground/85 italic leading-snug">
           Two hearts. One destiny.
           <br />
-          <span className="text-foreground/60">
+          <span className="text-foreground/55 text-2xl md:text-3xl lg:text-4xl">
             A journey of love, laughter, and forever.
           </span>
         </h2>
@@ -145,9 +159,10 @@ export function OurJourney() {
       <div className="relative max-w-3xl mx-auto">
         {/* Vertical line */}
         <motion.div
-          initial={{ scaleY: 0, originY: 0 }}
+          initial={{ scaleY: 0 }}
           animate={{ scaleY: 1 }}
-          transition={{ duration: 1.4, delay: 0.1, ease: 'easeInOut' }}
+          transition={{ duration: 1.6, delay: 0.1, ease: 'easeInOut' }}
+          style={{ transformOrigin: 'top' }}
           className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/40 to-transparent"
         />
 
