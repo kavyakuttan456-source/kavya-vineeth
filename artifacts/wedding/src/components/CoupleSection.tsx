@@ -2,28 +2,11 @@ import { motion } from 'framer-motion';
 import brideImg from '../assets/kavya.jpg';
 import groomImg from '../assets/vineeth.jpg';
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.25 },
-  },
-};
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 48 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1.1, ease: [0.22, 1, 0.36, 1] } },
-};
-
-const fadeIn = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 1.4, ease: 'easeOut' } },
-};
-
 function OrnamentLine() {
   return (
     <div className="flex items-center gap-3 my-2">
       <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/40" />
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="shrink-0">
         <path d="M8 1 L9.5 6.5 L15 8 L9.5 9.5 L8 15 L6.5 9.5 L1 8 L6.5 6.5 Z" fill="currentColor" className="text-primary/60" />
       </svg>
       <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/40" />
@@ -46,7 +29,9 @@ function Portrait({
 }) {
   return (
     <motion.div
-      variants={fadeUp}
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.1, delay, ease: [0.22, 1, 0.36, 1] }}
       className="flex flex-col items-center"
     >
       {/* Decorative corner frame */}
@@ -85,9 +70,8 @@ function Portrait({
       {/* Name & role */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: delay + 0.3, duration: 0.9, ease: 'easeOut' }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: delay + 0.4, duration: 0.9, ease: 'easeOut' }}
         className="mt-6 text-center"
       >
         <p className="font-serif text-3xl md:text-4xl text-primary italic drop-shadow-md">{name}</p>
@@ -101,7 +85,7 @@ function Portrait({
 export function CoupleSection() {
   return (
     <section className="w-full min-h-screen flex flex-col items-center justify-center px-6 py-24 relative overflow-hidden">
-      {/* Radial glow in the background */}
+      {/* Radial glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -113,8 +97,7 @@ export function CoupleSection() {
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 28 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.1, ease: 'easeOut' }}
         className="text-center mb-14 flex flex-col items-center gap-3"
       >
@@ -135,24 +118,20 @@ export function CoupleSection() {
       </motion.div>
 
       {/* Portraits */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-80px' }}
-        variants={containerVariants}
-        className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 lg:gap-28"
-      >
+      <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 lg:gap-28">
         <Portrait
           src={brideImg}
           name="Kavya"
           role="The Bride"
           objectPosition="50% 15%"
-          delay={0}
+          delay={0.3}
         />
 
         {/* Ampersand separator */}
         <motion.div
-          variants={fadeIn}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 1.2 }}
           className="flex flex-col items-center gap-3 py-4"
         >
           <div className="w-px h-12 bg-gradient-to-b from-transparent to-primary/40 hidden md:block" />
@@ -167,10 +146,9 @@ export function CoupleSection() {
           name="Vineeth"
           role="The Groom"
           objectPosition="50% 20%"
-          delay={0.2}
+          delay={0.5}
         />
-      </motion.div>
-
+      </div>
     </section>
   );
 }
