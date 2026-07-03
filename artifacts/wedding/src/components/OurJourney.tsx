@@ -141,12 +141,8 @@ export function OurJourney() {
         <p className="text-primary/60 font-sans tracking-[0.3em] text-xs uppercase mb-6">
           Our Journey
         </p>
-        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground/85 italic leading-snug">
-          Two hearts. One destiny.
-          <br />
-          <span className="text-foreground/55 text-2xl md:text-3xl lg:text-4xl">
-            A journey of love, laughter, and forever.
-          </span>
+        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground/90 italic leading-snug">
+          A journey of love, laughter, and forever.
         </h2>
         <div className="flex items-center justify-center gap-4 mt-8">
           <div className="h-px w-16 bg-primary/30" />

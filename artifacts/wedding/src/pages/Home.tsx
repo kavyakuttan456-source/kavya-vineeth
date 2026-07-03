@@ -4,6 +4,7 @@ import { FloatingPetals } from '@/components/FloatingPetals';
 import { Splash } from '@/components/Splash';
 import { CoupleSection } from '@/components/CoupleSection';
 import { OurJourney } from '@/components/OurJourney';
+import { EventCards } from '@/components/EventCards';
 import { Invitation } from '@/components/Invitation';
 import { EventDetails } from '@/components/EventDetails';
 import { Countdown } from '@/components/Countdown';
@@ -44,6 +45,7 @@ export default function Home() {
             <Invitation guestName={guestName} />
             <CoupleSection />
             <OurJourney />
+            <EventCards />
             <EventDetails />
             <Countdown />
             <Story />
