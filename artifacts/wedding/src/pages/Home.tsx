@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FloatingPetals } from '@/components/FloatingPetals';
 import { Splash } from '@/components/Splash';
+import { CoupleSection } from '@/components/CoupleSection';
 import { Invitation } from '@/components/Invitation';
 import { EventDetails } from '@/components/EventDetails';
 import { Countdown } from '@/components/Countdown';
@@ -39,6 +40,7 @@ export default function Home() {
             transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
             className="relative z-10 flex flex-col items-center"
           >
+            <CoupleSection />
             <Invitation guestName={guestName} />
             <EventDetails />
             <Countdown />
