@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import brideImg from '@assets/1000318912_1783118643222.jpg';
-import groomImg from '@assets/1000550096_1783118371579.jpg';
+import brideImg from '../assets/kavya.jpg';
+import groomImg from '../assets/vineeth.jpg';
 
 const containerVariants = {
   hidden: {},
