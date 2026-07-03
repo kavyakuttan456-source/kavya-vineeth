@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import brideImg from '@assets/1000318912_1783118374180.jpg';
+import brideImg from '@assets/1000318912_1783118643222.jpg';
 import groomImg from '@assets/1000550096_1783118371579.jpg';
 
 const containerVariants = {
@@ -110,27 +110,6 @@ export function CoupleSection() {
         }}
       />
 
-      {/* Section header */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-80px' }}
-        variants={fadeIn}
-        className="text-center mb-16 md:mb-20"
-      >
-        <p className="text-primary/60 font-sans tracking-[0.3em] text-xs uppercase mb-3">
-          The Couple
-        </p>
-        <h2 className="font-serif text-4xl md:text-6xl text-foreground/90 italic leading-tight">
-          Kavya <span className="text-primary/70 not-italic text-3xl md:text-4xl">&amp;</span> Vineeth
-        </h2>
-        <div className="flex items-center justify-center gap-4 mt-4">
-          <div className="h-px w-16 bg-primary/30" />
-          <div className="w-1.5 h-1.5 bg-primary/50 rotate-45" />
-          <div className="h-px w-16 bg-primary/30" />
-        </div>
-      </motion.div>
-
       {/* Portraits */}
       <motion.div
         initial="hidden"
@@ -166,6 +145,33 @@ export function CoupleSection() {
           objectPosition="50% 20%"
           delay={0.2}
         />
+      </motion.div>
+
+      {/* "Two Souls, One Journey" tagline */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.5, duration: 1.2, ease: 'easeOut' }}
+        className="mt-14 text-center flex flex-col items-center gap-4"
+      >
+        <div className="flex items-center gap-4">
+          <div className="h-px w-12 bg-primary/30" />
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="shrink-0">
+            <path d="M8 1 L9.5 6.5 L15 8 L9.5 9.5 L8 15 L6.5 9.5 L1 8 L6.5 6.5 Z" fill="currentColor" className="text-primary/50" />
+          </svg>
+          <div className="h-px w-12 bg-primary/30" />
+        </div>
+        <p className="font-serif text-2xl md:text-3xl text-foreground/70 italic tracking-wide">
+          Two Souls, One Journey
+        </p>
+        <div className="flex items-center gap-4">
+          <div className="h-px w-12 bg-primary/30" />
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="shrink-0">
+            <path d="M8 1 L9.5 6.5 L15 8 L9.5 9.5 L8 15 L6.5 9.5 L1 8 L6.5 6.5 Z" fill="currentColor" className="text-primary/50" />
+          </svg>
+          <div className="h-px w-12 bg-primary/30" />
+        </div>
       </motion.div>
     </section>
   );
