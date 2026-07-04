@@ -3,6 +3,7 @@ import cors from "cors";
 const pinoHttp = require("pino-http");
 import router from "./routes";
 import { logger } from "./lib/logger";
+import serverless from "serverless-http";
 
 const app: Express = express();
 
@@ -32,4 +33,5 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", router);
 
-export default app;
+// 🔥 THIS is what Vercel needs
+export default serverless(app);
