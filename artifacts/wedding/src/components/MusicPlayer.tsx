@@ -41,7 +41,7 @@ export function MusicPlayer() {
       <iframe
         ref={iframeRef}
         className="pointer-events-none fixed opacity-0 w-0 h-0"
-        src="https://www.youtube.com/embed/-cTvocXWOUQ?autoplay=1&loop=1&playlist=-cTvocXWOUQ&controls=0&mute=1&enablejsapi=1"
+        src="https://www.youtube.com/embed/Gz8HDbQZSQA?autoplay=1&loop=1&playlist=Gz8HDbQZSQA&controls=0&mute=1&enablejsapi=1&start=27"
         allow="autoplay; encrypted-media"
         onLoad={() => setReady(true)}
         title="Wedding music"
