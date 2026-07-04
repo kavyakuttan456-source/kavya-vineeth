@@ -2,24 +2,30 @@ import { motion } from 'framer-motion';
 
 export function Story() {
   return (
-    <section className="w-full flex flex-col items-center justify-center px-6 py-24 md:py-40 text-center relative">
+    <section className="w-full flex flex-col items-center justify-center px-6 py-24 md:py-32 text-center relative">
       <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-        className="max-w-2xl relative"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 1.4, ease: 'easeOut' }}
+        className="max-w-2xl relative flex flex-col items-center gap-6"
       >
-        {/* Subtle decorative marks above and below */}
-        <div className="text-primary/40 text-4xl font-serif mb-8 select-none">&ldquo;</div>
-        
-        <p className="font-serif text-2xl md:text-4xl lg:text-5xl text-primary/90 italic leading-[1.6] md:leading-[1.6] tracking-wide">
-          Two hearts.<br/>
-          <span className="inline-block my-2">One journey.</span><br/>
-          Forever begins on August 31.
+        <div className="flex items-center gap-4">
+          <div className="h-px w-14 bg-primary/30" />
+          <div className="w-1.5 h-1.5 rotate-45 bg-primary/50" />
+          <div className="h-px w-14 bg-primary/30" />
+        </div>
+
+        <p className="font-serif text-xl md:text-2xl lg:text-3xl text-foreground/70 italic leading-relaxed tracking-wide">
+          Together with our families, we joyfully welcome you
+          <br className="hidden md:block" /> to share in the beginning of our forever.
         </p>
 
-        <div className="text-primary/40 text-4xl font-serif mt-8 select-none">&rdquo;</div>
+        <div className="flex items-center gap-4">
+          <div className="h-px w-14 bg-primary/30" />
+          <div className="w-1.5 h-1.5 rotate-45 bg-primary/50" />
+          <div className="h-px w-14 bg-primary/30" />
+        </div>
       </motion.div>
     </section>
   );
