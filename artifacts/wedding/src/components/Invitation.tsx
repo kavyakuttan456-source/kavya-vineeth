@@ -20,7 +20,7 @@ export function Invitation({ guestName }: { guestName: string | null }) {
         <p className="font-sans text-foreground/80 leading-[2.5] tracking-[0.15em] md:text-sm max-w-2xl mx-auto uppercase text-xs font-light">
           Together with their families,<br />
           <span className="block my-8 font-serif text-3xl md:text-5xl text-primary italic tracking-normal drop-shadow-sm">
-            Kavya & Vineeth
+            <span className="uppercase">K</span>avya &amp; <span className="uppercase">V</span>ineeth
           </span>
           joyfully invite you to share in their happiness<br />
           as they unite in marriage.
