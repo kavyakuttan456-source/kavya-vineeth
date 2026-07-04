@@ -18,12 +18,14 @@ function Portrait({
   src,
   name,
   role,
+  caption,
   objectPosition,
   delay,
 }: {
   src: string;
   name: string;
   role: string;
+  caption: string;
   objectPosition: string;
   delay: number;
 }) {
@@ -77,6 +79,7 @@ function Portrait({
         <p className="font-serif text-3xl md:text-4xl text-primary italic drop-shadow-md">{name}</p>
         <OrnamentLine />
         <p className="text-foreground/50 font-sans text-xs tracking-[0.25em] uppercase mt-1">{role}</p>
+        <p className="text-foreground/40 font-serif italic text-sm mt-3">{caption}</p>
       </motion.div>
     </motion.div>
   );
@@ -123,6 +126,7 @@ export function CoupleSection() {
           src={brideImg}
           name="Kavya"
           role="The Bride"
+          caption="She is beautifully chaotic"
           objectPosition="50% 15%"
           delay={0.3}
         />
@@ -145,6 +149,7 @@ export function CoupleSection() {
           src={groomImg}
           name="Vineeth"
           role="The Groom"
+          caption="He is endlessly patient"
           objectPosition="50% 20%"
           delay={0.5}
         />
